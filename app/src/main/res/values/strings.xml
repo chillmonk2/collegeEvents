@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">collegeEvents</string>
+    <string name="test_event_desc">This is to inform that Biryani Stall no.5 is
+     giving 20 % discount to the early Birds</string>
+</resources>
