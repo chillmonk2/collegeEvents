@@ -23,6 +23,7 @@
             tools:text="Organiser"
             android:textAllCaps="true"
             android:textColor="#ffffff"
+            android:textStyle="bold"
             android:textSize="16sp"
             android:paddingLeft="16dp"/>
         <TextView
@@ -30,7 +31,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-
+            android:textStyle="bold"
             tools:text="12/03/20"
             android:gravity="right"
             android:textColor="#ffffff"/>
