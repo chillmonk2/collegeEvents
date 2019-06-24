@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "241446193220",
+    "firebase_url": "https://collegeevents-fcf4f.firebaseio.com",
+    "project_id": "collegeevents-fcf4f",
+    "storage_bucket": "collegeevents-fcf4f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241446193220:android:8d45c8a340d1c84f",
+        "android_client_info": {
+          "package_name": "com.github.chillmonk2.collegeevents"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "241446193220-ibm4bklpra2euss1vb1m09ujdrekvrg4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.github.chillmonk2.collegeevents",
+            "certificate_hash": "53f634ba70920a28a247f1264909638f85c00233"
+          }
+        },
+        {
+          "client_id": "241446193220-rl74lnfeclc6588o14v15fhsm2gqf2pa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYUEutyd0JqdryMl6-SVBgjrY9XJaFnBc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "241446193220-rl74lnfeclc6588o14v15fhsm2gqf2pa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

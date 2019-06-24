@@ -1,11 +1,16 @@
 package com.github.chillmonk2.collegeevents;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 
 import android.net.Uri;
 import android.os.Bundle;
 
 
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 
 
@@ -28,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
-
+    AlertDialog.Builder builder;
     public static final int RC_SIGN_IN = 1;
     public ListView EventsListView;
     public EventsAdapter mEventsAdapter;
@@ -38,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        builder = new AlertDialog.Builder(MainActivity.this);
         getSupportActionBar().setTitle("Events");
 
         ArrayList<EventsObject> eList = new ArrayList<EventsObject>();
@@ -81,6 +87,45 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        FloatingActionButton fab =  findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                builder.setMessage(R.string.dialog_message) .setTitle(R.string.dialog_title);
+
+                //Setting message manually and performing action on button click
+                builder.setCancelable(true)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                String EventFormat = "COPY FROM HERE:<--'y17cs151@rvrjc.ac.in'-->\nEvent Organiser : \nEvent Date: \n" +
+                                        "Event Description : Short and Simple ! \nEvent Links or Images ";
+                                String ResponseTime = "\nOur Team will contact you within 6 hours";
+                                String email = "y17cs151@rvrjc.ac.in";
+                                Intent intent = new Intent (Intent.ACTION_VIEW);
+                                intent.setData(Uri.parse("mailto:"));
+                                intent.putExtra(Intent.EXTRA_EMAIL,email);
+                                intent.putExtra(Intent.EXTRA_SUBJECT, "Add an Event");
+                                intent.putExtra(Intent.EXTRA_TEXT,EventFormat+ResponseTime);
+                                if (intent.resolveActivity(getPackageManager()) != null) {
+                                    startActivity(intent);
+                                }
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                //  Action for 'NO' Button
+                                dialog.cancel();
+                                Toast.makeText(MainActivity.this, "We will be waiting for your Event !", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                //Creating dialog box
+                AlertDialog alert = builder.create();
+                //Setting the title manually
+                alert.setTitle("Add Your Event");
+                alert.show();
+            }
+        });
+
 
 
     }
